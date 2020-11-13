@@ -546,7 +546,8 @@ var PhotoSwipeUI_Default =
 		_options = pswp.options;
 
 		// find pswp__ui element
-		_controls = framework.getChildByClass(pswp.scrollWrap, 'pswp__ui');
+		/* _controls = framework.getChildByClass(pswp.scrollWrap, 'pswp__ui'); */
+		_controls = framework.getChildByClass(pswp.template, 'pswp__ui');
 
 		// create local link
 		_listen = pswp.listen;

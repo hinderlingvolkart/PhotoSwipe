@@ -1,6 +1,8 @@
-/*! PhotoSwipe Default UI - 4.1.3 - 2019-01-08
+/*! - PhotoSwipe UI modification by HV - */ 
+
+/*! PhotoSwipe Default UI - 4.1.3 - 2020-11-13
 * http://photoswipe.com
-* Copyright (c) 2019 Dmitry Semenov; */
+* Copyright (c) 2020 Dmitry Semenov; */
 /**
 *
 * UI on top of main sliding area (caption, arrows, close button, etc.).
@@ -549,7 +551,8 @@ var PhotoSwipeUI_Default =
 		_options = pswp.options;
 
 		// find pswp__ui element
-		_controls = framework.getChildByClass(pswp.scrollWrap, 'pswp__ui');
+		/* _controls = framework.getChildByClass(pswp.scrollWrap, 'pswp__ui'); */
+		_controls = framework.getChildByClass(pswp.template, 'pswp__ui');
 
 		// create local link
 		_listen = pswp.listen;

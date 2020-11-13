@@ -5,7 +5,7 @@
  * Run 'grunt watch' to automatically regenerate '_site' when you change files in 'src' or in 'website'
  * 
  */
-
+const sass = require('node-sass');
 module.exports = function(grunt) {
 
   'use strict';
@@ -32,7 +32,8 @@ module.exports = function(grunt) {
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>; */\n',
 
-    defaultUIBanner:  '/*! PhotoSwipe Default UI - <%= pkg.version %> - ' +
+    defaultUIBanner:  '/*! - PhotoSwipe UI modification by HV - */ \n\n' +
+      '/*! PhotoSwipe Default UI - <%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>; */\n',
@@ -42,7 +43,10 @@ module.exports = function(grunt) {
       files: ['dist']
     },
     
-    sass: {                            
+    sass: {
+      options: {
+        implementation: sass
+      },
       dist: {                      
         files: {      
           'dist/photoswipe.css': 'src/css/main.scss',
